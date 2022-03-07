@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/warCompare/static/css/main.c4871d5d.css",
+    "main.js": "/warCompare/static/js/main.49d8fe4c.js",
+    "index.html": "/warCompare/index.html",
+    "main.c4871d5d.css.map": "/warCompare/static/css/main.c4871d5d.css.map",
+    "main.49d8fe4c.js.map": "/warCompare/static/js/main.49d8fe4c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c4871d5d.css",
+    "static/js/main.49d8fe4c.js"
+  ]
+}
