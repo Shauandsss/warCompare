@@ -1,0 +1,18 @@
+.Compare {
+  width: 100vw;
+  height: 100vh;
+}
+
+.Compare-SideBySide {
+  display: flex;
+  flex-direction: row;
+}
+
+.Compare-SideBySide-Item {
+  display: flex;
+  flex-direction: column;
+}
+
+.Compare-SideBySide-flag {
+  width: 100px;
+}

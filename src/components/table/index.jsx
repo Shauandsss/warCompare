@@ -182,13 +182,6 @@ function Table({ columns, data }) {
           ))}
         </select>
       </div>
-            <br />
-            <div>Showing the first 20 results of {rows.length} rows</div>
-            <div>
-                <pre>
-                    <code>{JSON.stringify(state.filters, null, 2)}</code>
-                </pre>
-            </div>
         </div>
     )
 }
