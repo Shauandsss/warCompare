@@ -16,26 +16,26 @@
 
 .Compare-Header div {
   min-width: 200px !important;
-  min-height: 50px;
+  min-height: 35px;
 }
 
 .Compare-SideBySide-Item {
   display: flex;
   flex-direction: column;
   min-width: 100px;
-  min-height: 50px;
+  min-height: 35px;
   align-items: center;
 }
 
 .Compare-SideBySide-Item > * {
   min-width: 100px;
-  min-height: 50px;
+  min-height: 35px;
   border: 1px solid gray;
 }
 
 .Compare-SideBySide-flag {
-  max-width: 75px;
-  min-width: 75px;
-  max-height: 48px;
-  min-height: 48px;
+  max-width: 50px;
+  min-width: 50px;
+  max-height: 33px;
+  min-height: 33px;
 }
