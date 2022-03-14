@@ -1,6 +1,7 @@
 import './compare.css'
 import React, { useEffect, useState } from 'react'
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 export default function Compare ( props ) {
 
@@ -39,7 +40,7 @@ export default function Compare ( props ) {
             let fieldCompare = 0
             let keyCompared = ''
             for (let i=0; i < items.length; i++){
-                if(items[i]['Active Personnel'] > fieldCompare){
+                if(items[i][field] >= fieldCompare){
                     fieldCompare = items[i][field]
                     keyCompared = items[i]['country_code'] 
                 }
@@ -48,7 +49,7 @@ export default function Compare ( props ) {
         }
     }
 
-    function changeTrigger () {
+    function changeTriggerAdd () {
         SetTriggerAddCountry(triggerAddCountry ? false : true)
         let sel = document.getElementById("Compare-Select");
         let text = sel.options[sel.selectedIndex].value
@@ -58,10 +59,19 @@ export default function Compare ( props ) {
     }
 
     const [triggerAddCountry, SetTriggerAddCountry] = useState(false)
+    const [triggerDeleteCountry, SetTriggerDeleteCountry] = useState(false)
 
     useEffect(() => {
 
-    }, [triggerAddCountry])
+    }, [triggerAddCountry,triggerDeleteCountry])
+
+    function changeTriggerDelete(element) {
+        SetTriggerDeleteCountry(triggerAddCountry ? false : true)
+        let dataTemp = dataCompare
+        dataTemp.splice(dataTemp.indexOf(props.data.find(t=>t.country === element)), 1)
+        console.log(dataCompare)
+        setDataCompare(dataTemp)
+    }
 
     return (
         <div className='Compare'>
@@ -72,7 +82,7 @@ export default function Compare ( props ) {
                         return <option key={item['country']} value={item['country']}>{item['country']}</option>
                     })}
                 </select>
-                <AddBoxIcon onClick={changeTrigger}/>
+                <AddBoxIcon onClick={changeTriggerAdd}/>
             </div>
             <div className='Compare-SideBySide'>
                 <div className='Compare-SideBySide-Item Compare-Header'>
@@ -100,19 +110,19 @@ export default function Compare ( props ) {
 
                 {dataCompare.map(key => {
                     return (<div className='Compare-SideBySide-Item'> 
-                            <div className='Compare-SideBySide-Item-PrimaryKey'> 
-                                {key['country']}
-                            </div> 
-                            <div> 
-                                <img className='Compare-SideBySide-flag' src={'https://countryflagsapi.com/svg/' + key['country_code']}/> 
-                            </div> 
+                                <div className='Compare-SideBySide-Item-PrimaryKey'> 
+                                    {key['country']}
+                                    <DeleteOutlineIcon onClick={() => changeTriggerDelete(key['country'])}/>
+                                </div> 
+                                <div> 
+                                    <img className='Compare-SideBySide-flag' src={'https://countryflagsapi.com/svg/' + key['country_code']}/> 
+                                </div> 
                                 {columnsFinish.length > 0 && columnsFinish.map(item => {
                                 return <div> 
                                     {key[item]}
                                 </div>  
-                                })
-                                }
-                        </div>     
+                                })}
+                            </div>     
                         
                 )})}
             </div>
