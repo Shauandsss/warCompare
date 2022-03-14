@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/warCompare/static/css/main.e2cc8d67.css",
-    "main.js": "/warCompare/static/js/main.5c473885.js",
+    "main.css": "/warCompare/static/css/main.3bdde830.css",
+    "main.js": "/warCompare/static/js/main.541f18be.js",
     "index.html": "/warCompare/index.html",
-    "main.e2cc8d67.css.map": "/warCompare/static/css/main.e2cc8d67.css.map",
-    "main.5c473885.js.map": "/warCompare/static/js/main.5c473885.js.map"
+    "main.3bdde830.css.map": "/warCompare/static/css/main.3bdde830.css.map",
+    "main.541f18be.js.map": "/warCompare/static/js/main.541f18be.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2cc8d67.css",
-    "static/js/main.5c473885.js"
+    "static/css/main.3bdde830.css",
+    "static/js/main.541f18be.js"
   ]
 }
